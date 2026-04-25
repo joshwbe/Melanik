@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sofía — Un tributo</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --rose: #c9788a;
+    --rose-light: #f5e6ea;
+    --rose-dark: #8b4a5a;
+    --cream: #fdf8f2;
+    --gold: #c8a96e;
+    --gold-light: #f0e6d0;
+    --text-dark: #3a2a2a;
+    --text-mid: #7a5a5a;
+    --text-light: #b08080;
+    --petal1: #e8b4bc;
+    --petal2: #f2cfd5;
+    --petal3: #d4899a;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(253,248,242,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(200,169,110,0.25);
+    padding: 0.75rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--rose-dark);
+    letter-spacing: 0.05em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--rose); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative;
+    background: linear-gradient(160deg, #fdf0f3 0%, var(--cream) 60%, #fef9f0 100%);
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(201,120,138,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(200,169,110,0.08) 0%, transparent 50%);
+  }
+  .hero-petals { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .petal {
+    position: absolute;
+    opacity: 0.18;
+    animation: floatPetal 12s infinite ease-in-out;
+  }
+  @keyframes floatPetal {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(8deg); }
+  }
+
+  .hero-ornament {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    animation: fadeUp 1s ease both;
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+  .hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+    animation: fadeUp 1s 0.4s ease both;
+  }
+  .hero-divider {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 2rem;
+    animation: fadeUp 1s 0.5s ease both;
+  }
+  .divider-line { width: 60px; height: 1px; background: var(--gold); opacity: 0.6; }
+  .divider-rose { color: var(--rose); font-size: 1rem; }
+  .hero-quote {
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text-mid);
+    max-width: 480px;
+    animation: fadeUp 1s 0.6s ease both;
+  }
+  .scroll-hint {
+    position: absolute; bottom: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    animation: fadeUp 1s 1s ease both;
+  }
+  .scroll-arrow {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s infinite;
+  }
+  @keyframes scrollPulse { 0%,100%{opacity:0.4;transform:scaleY(1)} 50%{opacity:1;transform:scaleY(1.1)} }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; }
+
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 30px; height: 1px;
+    background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+
+  /* BIOGRAPHY */
+  .bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .bio-text { font-size: 1.05rem; color: var(--text-mid); }
+  .bio-text p + p { margin-top: 1.25rem; }
+  .bio-photo-placeholder {
+    background: linear-gradient(135deg, var(--rose-light) 0%, var(--gold-light) 100%);
+    border-radius: 2px;
+    aspect-ratio: 3/4;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    border: 1px solid rgba(200,169,110,0.3);
+    color: var(--text-light);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    gap: 0.75rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .bio-photo-placeholder::before {
+    content: '';
+    position: absolute;
+    width: 60px; height: 60px;
+    border: 1px solid rgba(200,169,110,0.4);
+    border-radius: 50%;
+  }
+
+  /* TIMELINE */
+  #historia { border-top: 1px solid rgba(200,169,110,0.2); }
+  .timeline { position: relative; padding-left: 2.5rem; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gold), var(--rose), transparent);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+  .timeline-item.visible { opacity: 1; transform: translateX(0); }
+  .timeline-dot {
+    position: absolute; left: -2.875rem; top: 0.35rem;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--rose);
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--rose-light);
+  }
+  .timeline-year {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .timeline-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+  }
+  .timeline-desc { font-size: 0.95rem; color: var(--text-mid); }
+
+  /* GALERÍA */
+  #galeria { border-top: 1px solid rgba(200,169,110,0.2); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .gallery-card {
+    background: linear-gradient(135deg, var(--rose-light), var(--gold-light));
+    border-radius: 2px;
+    border: 1px solid rgba(200,169,110,0.25);
+    aspect-ratio: 1;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    position: relative;
+  }
+  .gallery-card img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .gallery-card:hover { transform: scale(1.02); box-shadow: 0 8px 30px rgba(201,120,138,0.15); }
+
+  /* FAVORITOS */
+  #favoritos { border-top: 1px solid rgba(200,169,110,0.2); }
+  .favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .fav-card {
+    background: white;
+    border: 1px solid rgba(200,169,110,0.2);
+    border-radius: 2px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .fav-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--rose), var(--gold));
+  }
+  .fav-category {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .fav-items { list-style: none; }
+  .fav-items li {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(200,169,110,0.1);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .fav-items li:last-child { border-bottom: none; }
+  .fav-bullet { color: var(--rose); font-size: 0.6rem; }
+
+  /* CARTAS */
+  #cartas {
+    background: linear-gradient(135deg, #1a0f14, #120a10, #1a0f14);
+    max-width: none;
+    padding: 5rem 2rem;
+  }
+  .cartas-inner { max-width: 700px; margin: 0 auto; }
+  #cartas .section-label { color: rgba(200,169,110,0.6); }
+  #cartas .section-title { color: rgba(253,248,242,0.9); }
+
+  .carta-intro {
+    font-size: 0.95rem;
+    color: rgba(176,128,128,0.8);
+    margin-bottom: 2.5rem;
+    line-height: 1.9;
+  }
+
+  .lock-screen { text-align: center; }
+  .lock-icon-wrap {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,110,0.3);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 2rem;
+    background: rgba(200,169,110,0.05);
+  }
+
+  .hint-box {
+    background: rgba(200,169,110,0.07);
+    border: 1px solid rgba(200,169,110,0.2);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  .hint-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(200,169,110,0.6);
+    margin-bottom: 0.5rem;
+  }
+  .hint-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(253,248,242,0.7);
+    line-height: 1.7;
+  }
+  .cipher-display {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: var(--rose);
+    letter-spacing: 0.1em;
+    word-break: break-all;
+    background: rgba(201,120,138,0.07);
+    border: 1px solid rgba(201,120,138,0.2);
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .password-input-wrap {
+    display: flex; gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  .password-input {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(200,169,110,0.25);
+    border-radius: 3px;
+    padding: 0.75rem 1rem;
+    color: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .password-input:focus { border-color: rgba(200,169,110,0.5); }
+  .unlock-btn {
+    background: transparent;
+    border: 1px solid rgba(200,169,110,0.4);
+    border-radius: 3px;
+    padding: 0.75rem 1.5rem;
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .unlock-btn:hover { background: rgba(200,169,110,0.1); border-color: var(--gold); }
+  .error-msg {
+    color: rgba(201,120,138,0.8);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    margin-top: 0.75rem;
+    text-align: center;
+    min-height: 1rem;
+  }
+
+  .cartas-content { display: none; }
+  .carta-envelope {
+    border: 1px solid rgba(200,169,110,0.25);
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  .carta-envelope:hover { border-color: rgba(200,169,110,0.5); }
+  .carta-header {
+    background: rgba(200,169,110,0.08);
+    padding: 1rem 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .carta-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .carta-title-display {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: rgba(253,248,242,0.85);
+  }
+  .carta-chevron {
+    color: rgba(200,169,110,0.5);
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+  }
+  .carta-body {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s;
+  }
+  .carta-body.open {
+    max-height: 800px;
+    padding: 1.5rem;
+  }
+  .carta-body p {
+    font-size: 1rem;
+    color: rgba(253,248,242,0.7);
+    line-height: 1.9;
+  }
+  .carta-body p + p { margin-top: 1rem; }
+  .carta-firma {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--rose);
+    margin-top: 1.5rem;
+    text-align: right;
+  }
+
+  /* CANCIONES */
+  #canciones { border-top: 1px solid rgba(200,169,110,0.2); }
+  .songs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+  @media (max-width: 700px) { .songs-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .song-card {
+    perspective: 900px;
+    cursor: pointer;
+    aspect-ratio: 1;
+  }
+  .song-card-inner {
+    position: relative;
+    width: 100%; height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 4px;
+  }
+  .song-card.flipped .song-card-inner { transform: rotateY(180deg); }
+
+  .song-front, .song-back {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .song-front {
+    background: linear-gradient(135deg, var(--rose-light), var(--gold-light));
+    border: 1px solid rgba(200,169,110,0.25);
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+  }
+  .song-front img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+  .song-card:hover .song-front img { transform: scale(1.04); }
+  .song-front-overlay {
+    position: relative; z-index: 1;
+    width: 100%;
+    background: linear-gradient(to top, rgba(58,42,42,0.85) 0%, transparent 100%);
+    padding: 0.75rem;
+  }
+  .song-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(253,248,242,0.9);
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+  .song-artist {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(200,169,110,0.85);
+  }
+  .song-placeholder {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.5rem;
+  }
+  .song-vinyl {
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    border: 6px solid rgba(200,169,110,0.2);
+    background: radial-gradient(circle at center, rgba(200,169,110,0.15) 0%, transparent 60%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .song-vinyl::before {
+    content: '';
+    position: absolute;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: rgba(200,169,110,0.25);
+  }
+
+  .song-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, var(--rose-dark), #5a2535);
+    border: 1px solid rgba(200,169,110,0.2);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .song-back-ornament {
+    font-size: 1rem;
+    color: rgba(200,169,110,0.5);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .song-back-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    color: rgba(253,248,242,0.88);
+    line-height: 1.6;
+  }
+  .song-back-attr {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(200,169,110,0.55);
+    margin-top: 0.75rem;
+  }
+  .song-hint {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 1.75rem;
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  }
+  .song-hint::before, .song-hint::after {
+    content: '';
+    display: inline-block;
+    width: 20px; height: 1px;
+    background: var(--text-light);
+    opacity: 0.4;
+  }
+
+  /* MÁQUINA */
+  .machine-section {
+    margin-top: 3rem;
+    border-top: 1px solid rgba(200,169,110,0.15);
+    padding-top: 2.5rem;
+  }
+  .machine-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: rgba(253,248,242,0.85);
+    margin-bottom: 0.5rem;
+  }
+  .machine-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    color: rgba(176,128,128,0.7);
+    margin-bottom: 1.5rem;
+  }
+  .machine-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .ctrl-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .ctrl-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(200,169,110,0.6);
+  }
+  .ctrl-select, .ctrl-input-m {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,169,110,0.2);
+    border-radius: 3px;
+    padding: 0.6rem 0.75rem;
+    color: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .ctrl-select:focus, .ctrl-input-m:focus { border-color: rgba(200,169,110,0.45); }
+  .ctrl-select option { background: #1a0f14; }
+  .machine-textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,169,110,0.2);
+    border-radius: 3px;
+    padding: 0.75rem 1rem;
+    color: var(--cream);
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    resize: vertical;
+    min-height: 90px;
+    outline: none;
+    margin-bottom: 0.75rem;
+    transition: border-color 0.3s;
+  }
+  .machine-textarea:focus { border-color: rgba(200,169,110,0.45); }
+  .machine-actions { display: flex; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .mach-btn {
+    background: transparent;
+    border: 1px solid rgba(200,169,110,0.3);
+    border-radius: 3px;
+    padding: 0.6rem 1.25rem;
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .mach-btn:hover { background: rgba(200,169,110,0.08); border-color: var(--gold); }
+  .mach-btn.primary { border-color: var(--rose); color: var(--rose); }
+  .mach-btn.primary:hover { background: rgba(201,120,138,0.1); }
+  .machine-output {
+    background: rgba(201,120,138,0.05);
+    border: 1px solid rgba(201,120,138,0.15);
+    border-radius: 3px;
+    padding: 1rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    color: rgba(253,248,242,0.8);
+    line-height: 1.8;
+    min-height: 60px;
+    word-break: break-all;
+  }
+  .output-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(176,128,128,0.6);
+    margin-bottom: 0.4rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #0f0a0d;
+    color: rgba(176,128,128,0.5);
+    text-align: center;
+    padding: 3rem 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+  }
+  .footer-rose {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: rgba(201,120,138,0.4);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  @media (max-width: 640px) {
+    .bio-grid, .favorites-grid, .machine-controls { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">✦ Melanik</div>
+  <ul class="nav-links">
+    <li><a href="#biografia">Biografía</a></li>
+    <li><a href="#historia">Historia</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#favoritos">Favoritos</a></li>
+    <li><a href="#canciones">Canciones</a></li>
+    <li><a href="#cartas">Cartas</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="inicio">
+  <div class="hero-petals">
+    <svg class="petal" style="top:8%;left:5%;width:120px;animation-delay:0s" viewBox="0 0 120 120"><ellipse cx="60" cy="60" rx="35" ry="55" fill="#c9788a" transform="rotate(-30 60 60)"/></svg>
+    <svg class="petal" style="top:15%;right:8%;width:80px;animation-delay:3s" viewBox="0 0 80 80"><ellipse cx="40" cy="40" rx="22" ry="36" fill="#c8a96e" transform="rotate(20 40 40)"/></svg>
+    <svg class="petal" style="bottom:20%;left:10%;width:90px;animation-delay:6s" viewBox="0 0 90 90"><ellipse cx="45" cy="45" rx="26" ry="42" fill="#d4899a" transform="rotate(45 45 45)"/></svg>
+    <svg class="petal" style="bottom:25%;right:5%;width:70px;animation-delay:2s" viewBox="0 0 70 70"><ellipse cx="35" cy="35" rx="20" ry="32" fill="#c9788a" transform="rotate(-15 35 35)"/></svg>
+    <svg class="petal" style="top:40%;left:2%;width:60px;animation-delay:8s" viewBox="0 0 60 60"><ellipse cx="30" cy="30" rx="16" ry="28" fill="#c8a96e" transform="rotate(60 30 30)"/></svg>
+    <svg class="petal" style="top:50%;right:3%;width:100px;animation-delay:4s" viewBox="0 0 100 100"><ellipse cx="50" cy="50" rx="28" ry="46" fill="#e8b4bc" transform="rotate(-45 50 50)"/></svg>
+  </div>
+
+  <p class="hero-ornament">— Lo que he aprendido de ti —</p>
+  <!-- ✏️ CAMBIA EL NOMBRE AQUÍ -->
+  <h1 class="hero-name">Melanik Lizet<br>"Melik"</h1>
+  <!-- ✏️ CAMBIA LA FRASE AQUÍ -->
+  <p class="hero-subtitle">"Contigo aprendí que existen nuevas y mejores emociones". Pero poco aprendí de ti.</p>
+  <div class="hero-divider">
+    <span class="divider-line"></span>
+    <span class="divider-rose">✿</span>
+    <span class="divider-line"></span>
+  </div>
+  <!-- ✏️ CAMBIA LA CITA AQUÍ -->
+  <p class="hero-quote"><em>Nunca te pregunte si te gusta el frio o el calor. Nunca te pregunte. "Cuando te interesa algo lo haces aún sabiendo no hay nada a cambio", bueno, no te preguntaré, lo descubriré yo.</em></p>
+
+  <div class="scroll-hint">
+    <span>Descender</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</div>
+
+<!-- BIOGRAFÍA -->
+<section id="biografia">
+  <p class="section-label">Quién es</p>
+  <!-- ✏️ CAMBIA EL TÍTULO -->
+  <h2 class="section-title">Su historia, mi favorita</h2>
+  <div class="bio-grid">
+    <div class="bio-text">
+      <!-- ✏️ CAMBIA ESTOS PÁRRAFOS CON SU HISTORIA REAL -->
+      <p>Melanik nació un 07 de agosto en el año 2006, en Guadalajara, Jalisco para posteriormente vivir en Tonalá, mismo municipio donde fue registrada en el año 2008.</p>
+      <p>Luego vivio en Baja California </p>
+      <p>Desde pequeña empezó a leer, su padrasto la incitaba a la lectura, tanto como para motivarla a leer "Don Quijote de la Mancha". El cual contiene aproximadamente 381,000 a 400,000 palabras en total, utilizando casi 23,000 palabras distintas. Un libro infantil ilustrado típico suele tener entre 500 y 1,000 palabras en total. Qué locura.</p>
+      <p>No esta de más decir que tu saga favorita es Harry Potter.</p>
+      <p></p>
+    </div>
+    <!-- ✏️ PARA AÑADIR FOTO: reemplaza este div por <img src="tu-foto.jpg" style="width:100%;border-radius:2px;"> -->
+    <div class="bio-photo-placeholder">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="36" height="36" style="opacity:0.4">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <circle cx="12" cy="10" r="3"/>
+        <path d="M7 20c0-2.76 2.24-5 5-5s5 2.24 5 5"/>
+      </svg>
+      <span>Tu foto aquí</span>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORIA / TIMELINE -->
+<section id="historia">
+  <p class="section-label">El camino recorrido</p>
+  <h2 class="section-title">Momentos que la definen</h2>
+  <div class="timeline">
+    <!-- ✏️ AÑADE O MODIFICA EVENTOS COPIANDO ESTE BLOQUE -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <p class="timeline-year">20XX</p>
+      <h3 class="timeline-title">El comienzo de todo</h3>
+      <p class="timeline-desc">Nació con una curiosidad innata y una sonrisa que desde el primer día prometía ser memorable. Su llegada cambió todo.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <p class="timeline-year">20XX</p>
+      <h3 class="timeline-title">El descubrimiento de su pasión</h3>
+      <p class="timeline-desc">Encontró lo que la hacía sentir viva. Desde ese momento nada fue lo mismo — ni para ella, ni para quienes la rodeaban.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <p class="timeline-year">20XX</p>
+      <h3 class="timeline-title">Un momento de valentía</h3>
+      <p class="timeline-desc">Eligió el camino difícil porque era el correcto. Esa decisión dijo más de ella que cualquier palabra podría haber dicho.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <p class="timeline-year">Hoy</p>
+      <h3 class="timeline-title">La persona que es ahora</h3>
+      <p class="timeline-desc">Todo ese camino la trajo hasta aquí. Y aquí es exactamente donde debía estar. Perfecta, a su manera.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <p class="section-label">Memorias</p>
+  <h2 class="section-title">Momentos capturados</h2>
+  <!-- ✏️ PARA AÑADIR FOTOS: reemplaza .gallery-card por <div class="gallery-card"><img src="foto.jpg"></div> -->
+  <div class="gallery-grid">
+    <div class="gallery-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="28" height="28" style="opacity:0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span style="font-size:0.6rem">Foto 1</span>
+    </div>
+    <div class="gallery-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="28" height="28" style="opacity:0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span style="font-size:0.6rem">Foto 2</span>
+    </div>
+    <div class="gallery-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="28" height="28" style="opacity:0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span style="font-size:0.6rem">Foto 3</span>
+    </div>
+    <div class="gallery-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="28" height="28" style="opacity:0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span style="font-size:0.6rem">Foto 4</span>
+    </div>
+    <div class="gallery-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="28" height="28" style="opacity:0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span style="font-size:0.6rem">Foto 5</span>
+    </div>
+    <div class="gallery-card" style="border-style:dashed;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="28" height="28" style="opacity:0.4"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      <span style="font-size:0.6rem">Añadir</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAVORITOS -->
+<section id="favoritos">
+  <p class="section-label">Lo que la hace ella</p>
+  <h2 class="section-title">Sus cosas favoritas</h2>
+  <!-- ✏️ RELLENA CON SUS FAVORITOS REALES -->
+  <div class="favorites-grid">
+    <div class="fav-card">
+      <p class="fav-category">✦ Música</p>
+      <ul class="fav-items">
+        <li><span class="fav-bullet">◆</span>Canción favorita aquí</li>
+        <li><span class="fav-bullet">◆</span>Artista que ama</li>
+        <li><span class="fav-bullet">◆</span>La canción de los dos</li>
+      </ul>
+    </div>
+    <div class="fav-card">
+      <p class="fav-category">✦ Lugares</p>
+      <ul class="fav-items">
+        <li><span class="fav-bullet">◆</span>El lugar donde creció</li>
+        <li><span class="fav-bullet">◆</span>Su rincón favorito</li>
+        <li><span class="fav-bullet">◆</span>Donde quiere ir</li>
+      </ul>
+    </div>
+    <div class="fav-card">
+      <p class="fav-category">✦ Películas &amp; series</p>
+      <ul class="fav-items">
+        <li><span class="fav-bullet">◆</span>Su película favorita</li>
+        <li><span class="fav-bullet">◆</span>La que vería mil veces</li>
+        <li><span class="fav-bullet">◆</span>La que le hizo llorar</li>
+      </ul>
+    </div>
+    <div class="fav-card">
+      <p class="fav-category">✦ Pequeñas cosas</p>
+      <ul class="fav-items">
+        <li><span class="fav-bullet">◆</span>Su comida favorita</li>
+        <li><span class="fav-bullet">◆</span>Su ritual de mañana</li>
+        <li><span class="fav-bullet">◆</span>Lo que la hace reír</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CANCIONES -->
+<section id="canciones">
+  <p class="section-label">Te soy sincero, no recuerdo que canciones te gustan. Solo las 2 primeras. Las siguientes son de investigar sobre ti.</p>
+  <h2 class="section-title">Canciones</h2>
+
+  <!-- ✏️ INSTRUCCIONES:
+       - Cambia "song-name" y "song-artist" con el nombre real de la canción y artista.
+       - Para añadir portada: pon <img src="portada.jpg"> dentro de .song-front (antes de .song-front-overlay).
+       - Cambia la frase en .song-back-quote por lo que esa canción te hace sentir o recordar.
+       - Puedes añadir o quitar tarjetas copiando el bloque completo .song-card.
+  -->
+  <div class="songs-grid">
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+            <img src="Portadas/Slide_Away.jpg">
+          <div class="song-placeholder">
+            <div class="song-vinyl"></div>
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Slide Away</span>
+            <span class="song-artist">Oasis</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Desde aquí empiezo, no recuerdo mucho, pero investigaré para descubrir las demás.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+            <img src="Portadas/Mujer_Amante.jpg">
+          <div class="song-placeholder">
+            <div class="song-vinyl"></div>
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Mujer Amante</span>
+            <span class="song-artist">Rata blanca</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">"Nunca había encontrado a nadie que le gustará." Lo mismo me paso</p>
+          <p class="song-back-attr">Un recuerdo</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src="Portadas/The_reason.jpg">
+          <div class="song-placeholder">
+            <div class="song-vinyl"></div>
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">The Reason</span>
+            <span class="song-artist">Hoobastank</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">"...And the reason is you."</p>
+            <p class="song-back-attr">Distancia</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src= "Portadas/Sailor_Song.jpg">
+          <div class="song-placeholder">
+            <div class="song-vinyl"></div>
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Sailor Song</span>
+            <span class="song-artist">Gigi Perez</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">No sé qué decir.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <div class="song-placeholder">
+            <div class="song-vinyl"></div>
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Canción 5</span>
+            <span class="song-artist">Artista</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">La escucho cuando quiero recordar por qué todo vale la pena. Siempre llego a la misma respuesta: tú.</p>
+          <p class="song-back-attr">La respuesta</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <div class="song-placeholder">
+            <div class="song-vinyl"></div>
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Canción 6</span>
+            <span class="song-artist">Artista</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Si pudiera dedicarte solo una canción para siempre, sería esta. Escúchala y piensa en mí.</p>
+          <p class="song-back-attr">Para siempre</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <div class="song-placeholder">
+            <div class="song-vinyl"></div>
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Canción 7</span>
+            <span class="song-artist">Artista</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Me encontró en el momento justo, igual que tú. Creo que no fue coincidencia ninguna de las dos.</p>
+          <p class="song-back-attr">Destino</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <div class="song-placeholder">
+            <div class="song-vinyl"></div>
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Canción 8</span>
+            <span class="song-artist">Artista</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Esta canción tiene tu nombre escrito entre líneas aunque tú todavía no lo sepas.</p>
+          <p class="song-back-attr">Un secreto</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p class="song-hint">Toca cada portada para leer lo que siento</p>
+</section>
+
+<!-- CARTAS -->
+<div id="cartas" style="background:linear-gradient(135deg,#1a0f14,#120a10,#1a0f14);padding:5rem 2rem;">
+  <div class="cartas-inner">
+    <p class="section-label" style="color:rgba(200,169,110,0.6)">Solo para ti</p>
+    <h2 class="section-title" style="color:rgba(253,248,242,0.9)">Las cartas</h2>
+
+    <!-- PANTALLA DE BLOQUEO -->
+    <div class="lock-screen" id="lockScreen">
+      <div class="lock-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.7)" stroke-width="1.5" width="32" height="32">
+          <rect x="5" y="11" width="14" height="11" rx="2"/>
+          <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+          <circle cx="12" cy="16" r="1" fill="rgba(200,169,110,0.7)" stroke="none"/>
+        </svg>
+      </div>
+
+      <p class="carta-intro">
+        Estas cartas fueron escritas solo para tus ojos.<br>
+        Para abrirlas necesitas descifrar la contraseña.
+      </p>
+
+      <div class="hint-box">
+        <p class="hint-label">✦ Pista 1 — La contraseña cifrada en Base64</p>
+        <!-- La contraseña se genera automáticamente desde JS -->
+        <div class="cipher-display" id="cipherDisplay"></div>
+      </div>
+
+      <div class="hint-box">
+        <p class="hint-label">✦ Pista 2 — Cómo descifrarla</p>
+        <p class="hint-text">
+          La contraseña está codificada en <strong style="color:rgba(200,169,110,0.8)">Base64</strong>.<br>
+          Para descifrarla, ve a la máquina de abajo, selecciona <em style="color:rgba(201,120,138,0.9)">Base64 → Texto</em>,
+          pega el código de arriba y presiona descifrar.<br><br>
+          <span style="opacity:0.6">💡 La contraseña tiene relación con la fecha más importante para nosotros.</span>
+        </p>
+      </div>
+
+      <div class="hint-box">
+        <p class="hint-label">✦ Pista 3 — Una última ayuda</p>
+        <!-- ✏️ CAMBIA ESTA PISTA para que apunte a tu contraseña real -->
+        <p class="hint-text">
+          Piensa en ese día, ese mes, ese año — en el formato <em style="color:rgba(200,169,110,0.8)">DD-MM-YYYY</em>.<br>
+          Luego añade al final las iniciales de tu nombre.
+        </p>
+      </div>
+
+      <div class="password-input-wrap">
+        <input type="password" class="password-input" id="passwordInput" placeholder="Escribe la contraseña...">
+        <button class="unlock-btn" onclick="tryUnlock()">Abrir ✦</button>
+      </div>
+      <p class="error-msg" id="errorMsg"></p>
+
+      <!-- Máquina descifradora (antes de desbloquear) -->
+      <div class="machine-section">
+        <h3 class="machine-title">Máquina descifradora</h3>
+        <p class="machine-sub">Ajusta la configuración según el tipo de código que quieras descifrar</p>
+        <div class="machine-controls">
+          <div class="ctrl-group">
+            <label class="ctrl-label">Modo</label>
+            <select class="ctrl-select" id="machMode">
+              <option value="b64decode">Base64 → Texto</option>
+              <option value="b64encode">Texto → Base64</option>
+              <option value="caesar">César (descifrar)</option>
+              <option value="caesarEnc">César (cifrar)</option>
+              <option value="reverse">Texto invertido</option>
+              <option value="rot13">ROT-13</option>
+            </select>
+          </div>
+          <div class="ctrl-group">
+            <label class="ctrl-label">Desplazamiento César (si aplica)</label>
+            <input type="number" class="ctrl-input-m" id="caesarShift" value="3" min="1" max="25">
+          </div>
+        </div>
+        <textarea class="machine-textarea" id="machInput" placeholder="Pega aquí el mensaje a descifrar..."></textarea>
+        <div class="machine-actions">
+          <button class="mach-btn primary" onclick="runMachine()">⚙ Descifrar / Cifrar</button>
+          <button class="mach-btn" onclick="clearMachine()">Limpiar</button>
+          <button class="mach-btn" onclick="copyOutput()">Copiar resultado</button>
+        </div>
+        <p class="output-label">Resultado:</p>
+        <div class="machine-output" id="machOutput">El resultado aparecerá aquí...</div>
+      </div>
+    </div>
+
+    <!-- CARTAS DESBLOQUEADAS -->
+    <div class="cartas-content" id="cartasContent">
+      <p class="carta-intro">Has descifrado el acceso. Estas palabras estaban esperándote. ✦</p>
+
+      <!-- ✏️ CAMBIA EL TÍTULO Y CONTENIDO DE CADA CARTA -->
+      <div class="carta-envelope" onclick="toggleCarta(this)">
+        <div class="carta-header">
+          <span class="carta-num">Carta I</span>
+          <span class="carta-title-display">La primera cosa que quiero decirte</span>
+          <span class="carta-chevron">▾</span>
+        </div>
+        <div class="carta-body">
+          <p>Aquí irá tu primera carta. Puedes escribir todo lo que sientes, todo lo que quieres que ella lea. Este espacio es completamente tuyo.</p>
+          <p>Cada palabra que pongas aquí habrá valido la pena solo por el momento en que ella la lea.</p>
+          <p class="carta-firma">— Con todo lo que soy</p>
+        </div>
+      </div>
+
+      <div class="carta-envelope" onclick="toggleCarta(this)">
+        <div class="carta-header">
+          <span class="carta-num">Carta II</span>
+          <span class="carta-title-display">Lo que nunca te dije</span>
+          <span class="carta-chevron">▾</span>
+        </div>
+        <div class="carta-body">
+          <p>Segunda carta. Escribe aquí lo que nunca encontraste el momento de decir. Las palabras escritas pesan diferente a las habladas.</p>
+          <p class="carta-firma">— Siempre</p>
+        </div>
+      </div>
+
+      <div class="carta-envelope" onclick="toggleCarta(this)">
+        <div class="carta-header">
+          <span class="carta-num">Carta III</span>
+          <span class="carta-title-display">Para cuando lo necesites recordar</span>
+          <span class="carta-chevron">▾</span>
+        </div>
+        <div class="carta-body">
+          <p>Esta carta es para los días difíciles. Para cuando dudes de ti misma. Para que sepas exactamente lo que alguien piensa de ti cuando no puedes verlo claramente.</p>
+          <p class="carta-firma">— Tuyo/a</p>
+        </div>
+      </div>
+
+      <!-- Máquina descifradora (después de desbloquear) -->
+      <div class="machine-section">
+        <h3 class="machine-title">Máquina descifradora</h3>
+        <p class="machine-sub">Para los mensajes ocultos dentro de las cartas</p>
+        <div class="machine-controls">
+          <div class="ctrl-group">
+            <label class="ctrl-label">Modo</label>
+            <select class="ctrl-select" id="machMode2">
+              <option value="b64decode">Base64 → Texto</option>
+              <option value="b64encode">Texto → Base64</option>
+              <option value="caesar">César (descifrar)</option>
+              <option value="caesarEnc">César (cifrar)</option>
+              <option value="reverse">Texto invertido</option>
+              <option value="rot13">ROT-13</option>
+            </select>
+          </div>
+          <div class="ctrl-group">
+            <label class="ctrl-label">Desplazamiento César (si aplica)</label>
+            <input type="number" class="ctrl-input-m" id="caesarShift2" value="3" min="1" max="25">
+          </div>
+        </div>
+        <textarea class="machine-textarea" id="machInput2" placeholder="Pega aquí el mensaje..."></textarea>
+        <div class="machine-actions">
+          <button class="mach-btn primary" onclick="runMachine2()">⚙ Descifrar / Cifrar</button>
+          <button class="mach-btn" onclick="clearMachine2()">Limpiar</button>
+          <button class="mach-btn" onclick="copyOutput2()">Copiar resultado</button>
+        </div>
+        <p class="output-label">Resultado:</p>
+        <div class="machine-output" id="machOutput2">El resultado aparecerá aquí...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <!-- ✏️ CAMBIA EL NOMBRE EN EL FOOTER -->
+  <span class="footer-rose">✿</span>
+  <p>Hecho con amor · Solo para ti · Siempre</p>
+</footer>
+
+<script>
+// ════════════════════════════════════════════
+//   ✏️  CONFIGURACIÓN — CAMBIA ESTOS VALORES
+// ════════════════════════════════════════════
+
+// Contraseña real que debe escribir para desbloquear las cartas
+// Recomendado: una fecha especial + iniciales, p.ej. "14-02-2024SG"
+const REAL_PASSWORD = '14-02-2024SG';
+
+// ════════════════════════════════════════════
+//   SISTEMA DE BLOQUEO (no necesitas editar esto)
+// ════════════════════════════════════════════
+
+// Muestra la versión cifrada en Base64 como pista
+document.getElementById('cipherDisplay').textContent = btoa(REAL_PASSWORD);
+
+function tryUnlock() {
+  const input = document.getElementById('passwordInput').value;
+  const err = document.getElementById('errorMsg');
+  if (input === REAL_PASSWORD) {
+    document.getElementById('lockScreen').style.display = 'none';
+    const cc = document.getElementById('cartasContent');
+    cc.style.display = 'block';
+    err.textContent = '';
+    setTimeout(() => cc.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  } else {
+    err.textContent = 'Contraseña incorrecta. Sigue las pistas... ✦';
+    document.getElementById('passwordInput').value = '';
+  }
+}
+
+document.getElementById('passwordInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') tryUnlock();
+});
+
+// ════════════════════════════════════════════
+//   CARTAS — ACORDEÓN
+// ════════════════════════════════════════════
+
+function toggleCarta(el) {
+  const body = el.querySelector('.carta-body');
+  const chev = el.querySelector('.carta-chevron');
+  const isOpen = body.classList.contains('open');
+  document.querySelectorAll('.carta-body').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.carta-chevron').forEach(c => c.style.transform = '');
+  if (!isOpen) {
+    body.classList.add('open');
+    chev.style.transform = 'rotate(180deg)';
+  }
+}
+
+// ════════════════════════════════════════════
+//   MÁQUINA DESCIFRADORA
+// ════════════════════════════════════════════
+
+function caesarDecrypt(text, shift) {
+  return text.split('').map(c => {
+    if (/[a-zA-Z]/.test(c)) {
+      const base = c >= 'a' ? 97 : 65;
+      return String.fromCharCode(((c.charCodeAt(0) - base - shift + 26) % 26) + base);
+    }
+    return c;
+  }).join('');
+}
+function caesarEncrypt(text, shift) {
+  return text.split('').map(c => {
+    if (/[a-zA-Z]/.test(c)) {
+      const base = c >= 'a' ? 97 : 65;
+      return String.fromCharCode(((c.charCodeAt(0) - base + shift) % 26) + base);
+    }
+    return c;
+  }).join('');
+}
+function rot13(text) { return caesarEncrypt(text, 13); }
+
+function processMachine(inputId, modeId, shiftId, outputId) {
+  const input = document.getElementById(inputId).value.trim();
+  const mode = document.getElementById(modeId).value;
+  const shift = parseInt(document.getElementById(shiftId).value) || 3;
+  const out = document.getElementById(outputId);
+  if (!input) { out.textContent = 'Escribe o pega algo primero...'; return; }
+  try {
+    let result = '';
+    if (mode === 'b64decode') result = decodeURIComponent(escape(atob(input)));
+    else if (mode === 'b64encode') result = btoa(unescape(encodeURIComponent(input)));
+    else if (mode === 'caesar') result = caesarDecrypt(input, shift);
+    else if (mode === 'caesarEnc') result = caesarEncrypt(input, shift);
+    else if (mode === 'reverse') result = input.split('').reverse().join('');
+    else if (mode === 'rot13') result = rot13(input);
+    out.textContent = result;
+  } catch(e) {
+    out.textContent = '⚠ Error al procesar. Verifica que el texto sea correcto para este modo.';
+  }
+}
+
+function runMachine()   { processMachine('machInput','machMode','caesarShift','machOutput'); }
+function clearMachine() { document.getElementById('machInput').value=''; document.getElementById('machOutput').textContent='El resultado aparecerá aquí...'; }
+function copyOutput()   { navigator.clipboard.writeText(document.getElementById('machOutput').textContent).catch(()=>{}); }
+
+function runMachine2()   { processMachine('machInput2','machMode2','caesarShift2','machOutput2'); }
+function clearMachine2() { document.getElementById('machInput2').value=''; document.getElementById('machOutput2').textContent='El resultado aparecerá aquí...'; }
+function copyOutput2()   { navigator.clipboard.writeText(document.getElementById('machOutput2').textContent).catch(()=>{}); }
+
+// CANCIONES — VOLTEO
+function flipSong(card) {
+  card.classList.toggle('flipped');
+}
+
+// ANIMACIÓN TIMELINE
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.2 });
+document.querySelectorAll('.timeline-item').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
