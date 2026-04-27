@@ -3,31 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sofía — Un tributo</title>
+<title>Melanik</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --rose: #c9788a;
-    --rose-light: #f5e6ea;
-    --rose-dark: #8b4a5a;
-    --cream: #fdf8f2;
-    --gold: #c8a96e;
-    --gold-light: #f0e6d0;
-    --text-dark: #3a2a2a;
-    --text-mid: #7a5a5a;
-    --text-light: #b08080;
-    --petal1: #e8b4bc;
-    --petal2: #f2cfd5;
-    --petal3: #d4899a;
-  }
+  --blue-pastel: #cfe8ff;      
+  --blue-soft: #a9d6ff;       
+  --blue-light: #eaf4ff;       
 
+  --cream: #f7fbff;           
+}
   html { scroll-behavior: smooth; }
 
   body {
     font-family: 'EB Garamond', Georgia, serif;
-    background: var(--cream);
+    background: var(--blue-pastel);
     color: var(--text-dark);
     line-height: 1.8;
     overflow-x: hidden;
@@ -36,7 +28,7 @@
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(253,248,242,0.92);
+    background: rgba(224,242,254,0.92);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(200,169,110,0.25);
     padding: 0.75rem 2rem;
@@ -66,7 +58,7 @@
     min-height: 100vh;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     position: relative;
-    background: linear-gradient(160deg, #fdf0f3 0%, var(--cream) 60%, #fef9f0 100%);
+    background: linear-gradient(160deg, #dcefff 0%, var(--blue-pastel) 60%, #eaf6ff 100%);
     padding: 6rem 2rem 4rem;
     text-align: center;
     overflow: hidden;
@@ -154,7 +146,7 @@
   }
 
   /* SECTIONS */
-  section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; }
+  section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; background: transparent;}
 
   .section-label {
     font-family: 'Montserrat', sans-serif;
@@ -516,7 +508,9 @@
     -webkit-backface-visibility: hidden;
     border-radius: 4px;
     overflow: hidden;
-  }
+  color: #1a1a1a;
+}
+  
 
   .song-front {
     background: linear-gradient(135deg, var(--rose-light), var(--gold-light));
@@ -574,16 +568,20 @@
   }
 
   .song-back {
-    transform: rotateY(180deg);
-    background: linear-gradient(135deg, var(--rose-dark), #5a2535);
-    border: 1px solid rgba(200,169,110,0.2);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: 1.25rem;
-    text-align: center;
-  }
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #e6f3ff, #cfe8ff); /* azul claro */
+  border: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  text-align: center;
+}
+  
   .song-back-ornament {
     font-size: 1rem;
-    color: rgba(200,169,110,0.5);
+    color: #555;
     margin-bottom: 0.75rem;
     display: block;
   }
@@ -591,8 +589,9 @@
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-size: clamp(0.85rem, 2vw, 1rem);
-    color: rgba(253,248,242,0.88);
     line-height: 1.6;
+    color: #111;
+    text-shadow: none;
   }
   .song-back-attr {
     font-family: 'Montserrat', sans-serif;
@@ -747,18 +746,20 @@
     .nav-links { gap: 1rem; }
     .nav-links a { font-size: 0.6rem; }
   }
+  a {
+    text-decoration: none;
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+
 <nav>
   <div class="nav-logo">✦ Melanik</div>
   <ul class="nav-links">
     <li><a href="#biografia">Biografía</a></li>
     <li><a href="#historia">Historia</a></li>
     <li><a href="#galeria">Galería</a></li>
-    <li><a href="#favoritos">Favoritos</a></li>
     <li><a href="#canciones">Canciones</a></li>
     <li><a href="#cartas">Cartas</a></li>
   </ul>
@@ -776,16 +777,15 @@
   </div>
 
   <p class="hero-ornament">— Lo que he aprendido de ti —</p>
-  <!-- ✏️ CAMBIA EL NOMBRE AQUÍ -->
   <h1 class="hero-name">Melanik Lizet<br>"Melik"</h1>
-  <!-- ✏️ CAMBIA LA FRASE AQUÍ -->
+ 
   <p class="hero-subtitle">"Contigo aprendí que existen nuevas y mejores emociones". Pero poco aprendí de ti.</p>
   <div class="hero-divider">
     <span class="divider-line"></span>
     <span class="divider-rose">✿</span>
     <span class="divider-line"></span>
   </div>
-  <!-- ✏️ CAMBIA LA CITA AQUÍ -->
+  
   <p class="hero-quote"><em>Nunca te pregunte si te gusta el frio o el calor. Nunca te pregunte. "Cuando te interesa algo lo haces aún sabiendo no hay nada a cambio", bueno, no te preguntaré, lo descubriré yo.</em></p>
 
   <div class="scroll-hint">
@@ -794,21 +794,21 @@
   </div>
 </div>
 
-<!-- BIOGRAFÍA -->
+
 <section id="biografia">
   <p class="section-label">Quién es</p>
-  <!-- ✏️ CAMBIA EL TÍTULO -->
-  <h2 class="section-title">Su historia, mi favorita</h2>
+  
+  <h2 class="section-title">Historia</h2>
   <div class="bio-grid">
     <div class="bio-text">
-      <!-- ✏️ CAMBIA ESTOS PÁRRAFOS CON SU HISTORIA REAL -->
+      
       <p>Melanik nació un 07 de agosto en el año 2006, en Guadalajara, Jalisco para posteriormente vivir en Tonalá, mismo municipio donde fue registrada en el año 2008.</p>
       <p>Luego vivio en Baja California </p>
       <p>Desde pequeña empezó a leer, su padrasto la incitaba a la lectura, tanto como para motivarla a leer "Don Quijote de la Mancha". El cual contiene aproximadamente 381,000 a 400,000 palabras en total, utilizando casi 23,000 palabras distintas. Un libro infantil ilustrado típico suele tener entre 500 y 1,000 palabras en total. Qué locura.</p>
       <p>No esta de más decir que tu saga favorita es Harry Potter.</p>
       <p></p>
     </div>
-    <!-- ✏️ PARA AÑADIR FOTO: reemplaza este div por <img src="tu-foto.jpg" style="width:100%;border-radius:2px;"> -->
+    
     <div class="bio-photo-placeholder">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="36" height="36" style="opacity:0.4">
         <rect x="3" y="3" width="18" height="18" rx="2"/>
@@ -820,124 +820,228 @@
   </div>
 </section>
 
-<!-- HISTORIA / TIMELINE -->
-<section id="historia">
-  <p class="section-label">El camino recorrido</p>
-  <h2 class="section-title">Momentos que la definen</h2>
-  <div class="timeline">
-    <!-- ✏️ AÑADE O MODIFICA EVENTOS COPIANDO ESTE BLOQUE -->
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <p class="timeline-year">20XX</p>
-      <h3 class="timeline-title">El comienzo de todo</h3>
-      <p class="timeline-desc">Nació con una curiosidad innata y una sonrisa que desde el primer día prometía ser memorable. Su llegada cambió todo.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <p class="timeline-year">20XX</p>
-      <h3 class="timeline-title">El descubrimiento de su pasión</h3>
-      <p class="timeline-desc">Encontró lo que la hacía sentir viva. Desde ese momento nada fue lo mismo — ni para ella, ni para quienes la rodeaban.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <p class="timeline-year">20XX</p>
-      <h3 class="timeline-title">Un momento de valentía</h3>
-      <p class="timeline-desc">Eligió el camino difícil porque era el correcto. Esa decisión dijo más de ella que cualquier palabra podría haber dicho.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <p class="timeline-year">Hoy</p>
-      <h3 class="timeline-title">La persona que es ahora</h3>
-      <p class="timeline-desc">Todo ese camino la trajo hasta aquí. Y aquí es exactamente donde debía estar. Perfecta, a su manera.</p>
-    </div>
-  </div>
-</section>
 
 <!-- GALERÍA -->
 <section id="galeria">
-  <p class="section-label">Memorias</p>
-  <h2 class="section-title">Momentos capturados</h2>
-  <!-- ✏️ PARA AÑADIR FOTOS: reemplaza .gallery-card por <div class="gallery-card"><img src="foto.jpg"></div> -->
+  <p class="section-label"></p>
+  <h2 class="section-title">Pinturas.</h2>
   <div class="gallery-grid">
     <div class="gallery-card">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="28" height="28" style="opacity:0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+       <img src="https://artmiamimagazine.com/wp-content/uploads/2026/02/Zdzislaw-Beksinski-e1707823589108.jpg">
       <span style="font-size:0.6rem">Foto 1</span>
     </div>
     <div class="gallery-card">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="28" height="28" style="opacity:0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+       <img src="https://cdn.shopify.com/s/files/1/1136/8870/files/Beksinski-2-990x1024.jpg">
       <span style="font-size:0.6rem">Foto 2</span>
     </div>
     <div class="gallery-card">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="28" height="28" style="opacity:0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <img src="https://static01.nyt.com/images/2026/02/19/espanol/19van-gogh-yellow-06-ES-copy1/19van-gogh-yellow-06-mediumSquareAt3X.jpg" alt="">
       <span style="font-size:0.6rem">Foto 3</span>
     </div>
     <div class="gallery-card">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="28" height="28" style="opacity:0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <img src="https://www.arsmundi.de/media/ab/10/9f/1763731308/amMagazin_vanGoghBeruehmteBilder_Teaser.jpg?ts=1763732191" alt="">
       <span style="font-size:0.6rem">Foto 4</span>
     </div>
     <div class="gallery-card">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="28" height="28" style="opacity:0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <img src="https://www.art4you.gallery/wp-content/uploads/Vincent_van_Gogh_-_Irises_1889.jpg" alt="">
       <span style="font-size:0.6rem">Foto 5</span>
     </div>
     <div class="gallery-card" style="border-style:dashed;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="28" height="28" style="opacity:0.4"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      <img src="https://pintar-al-oleo.com/wp-content/uploads/2013/01/El-Restaurante-Rispal-en-Asnieres-Van-Gogh-18871.jpg" alt="">
       <span style="font-size:0.6rem">Añadir</span>
     </div>
   </div>
 </section>
-
-<!-- FAVORITOS -->
-<section id="favoritos">
-  <p class="section-label">Lo que la hace ella</p>
-  <h2 class="section-title">Sus cosas favoritas</h2>
-  <!-- ✏️ RELLENA CON SUS FAVORITOS REALES -->
-  <div class="favorites-grid">
-    <div class="fav-card">
-      <p class="fav-category">✦ Música</p>
-      <ul class="fav-items">
-        <li><span class="fav-bullet">◆</span>Canción favorita aquí</li>
-        <li><span class="fav-bullet">◆</span>Artista que ama</li>
-        <li><span class="fav-bullet">◆</span>La canción de los dos</li>
-      </ul>
+<section id="Libros">
+  <p class="section-label"></p>
+  <h2 class="section-title">Libros.</h2>
+  <div class="gallery-grid">
+    <div class="gallery-card">
+       <img src="https://m.media-amazon.com/images/I/81dxFCnAp0L._AC_UF1000,1000_QL80_.jpg">
+      <span style="font-size:0.6rem">Foto 1</span>
     </div>
-    <div class="fav-card">
-      <p class="fav-category">✦ Lugares</p>
-      <ul class="fav-items">
-        <li><span class="fav-bullet">◆</span>El lugar donde creció</li>
-        <li><span class="fav-bullet">◆</span>Su rincón favorito</li>
-        <li><span class="fav-bullet">◆</span>Donde quiere ir</li>
-      </ul>
+    <div class="gallery-card">
+       <img src="https://m.media-amazon.com/images/I/81YqcrdEnkL._AC_UF1000,1000_QL80_.jpg">
+      <span style="font-size:0.6rem">Foto 2</span>
     </div>
-    <div class="fav-card">
-      <p class="fav-category">✦ Películas &amp; series</p>
-      <ul class="fav-items">
-        <li><span class="fav-bullet">◆</span>Su película favorita</li>
-        <li><span class="fav-bullet">◆</span>La que vería mil veces</li>
-        <li><span class="fav-bullet">◆</span>La que le hizo llorar</li>
-      </ul>
+    <div class="gallery-card">
+      <img src="https://imgv2-1-f.scribdassets.com/img/word_document/636301740/original/02ed2d50f3/1?v=1" alt="">
+      <span style="font-size:0.6rem">Foto 3</span>
     </div>
-    <div class="fav-card">
-      <p class="fav-category">✦ Pequeñas cosas</p>
-      <ul class="fav-items">
-        <li><span class="fav-bullet">◆</span>Su comida favorita</li>
-        <li><span class="fav-bullet">◆</span>Su ritual de mañana</li>
-        <li><span class="fav-bullet">◆</span>Lo que la hace reír</li>
-      </ul>
+    <div class="gallery-card">
+      <img src="https://m.media-amazon.com/images/I/81fAjaXNRpL._AC_UF1000,1000_QL80_.jpg" alt="">
+      <span style="font-size:0.6rem">Foto 4</span>
+    </div>
+    <div class="gallery-card">
+      <img src="https://m.media-amazon.com/images/I/81g9SrF8P1L._AC_UF1000,1000_QL80_.jpg" alt="">
+      <span style="font-size:0.6rem">Foto 5</span>
+    </div>
+    <div class="gallery-card" style="border-style:dashed;">
+      <img src="https://img1.od-cdn.com/ImageType-400/3450-1/%7B39CBDA0B-F15C-40E1-A169-A45AE395C3BF%7DIMG400.JPG" alt="">
+      <span style="font-size:0.6rem">Añadir</span>
     </div>
   </div>
+  
 </section>
 
-<!-- CANCIONES -->
+
 <section id="canciones">
-  <p class="section-label">Te soy sincero, no recuerdo que canciones te gustan. Solo las 2 primeras. Las siguientes son de investigar sobre ti.</p>
+  <p class="section-label">Busque en mi mente, tratando de recordar.</p>
   <h2 class="section-title">Canciones</h2>
 
-  <!-- ✏️ INSTRUCCIONES:
-       - Cambia "song-name" y "song-artist" con el nombre real de la canción y artista.
-       - Para añadir portada: pon <img src="portada.jpg"> dentro de .song-front (antes de .song-front-overlay).
-       - Cambia la frase en .song-back-quote por lo que esa canción te hace sentir o recordar.
-       - Puedes añadir o quitar tarjetas copiando el bloque completo .song-card.
-  -->
+
+  <div class="songs-grid">
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+            <img src="Portadas/Slide_Away.jpg">
+          <div class="song-placeholder">
+            <div class="song-vinyl"></div>
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Slide Away</span>
+            <span class="song-artist">Oasis</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Desde aquí empiezo, no recuerdo mucho, pero investigaré para descubrir las demás.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+            <img src="Mujer_Amante.jpg">
+          <div class="song-placeholder">
+            <div class="song-vinyl"></div>
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Mujer Amante</span>
+            <span class="song-artist">Rata blanca</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">"Nunca había encontrado a nadie que le gustará." Lo mismo me paso</p>
+          <p class="song-back-attr">Un recuerdo</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src="Portadas/The_reason.jpg">
+          
+          <div class="song-front-overlay">
+            <span class="song-name">The Reason</span>
+            <span class="song-artist">Hoobastank</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">"...And the reason is you."</p>
+            <p class="song-back-attr">Distancia</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src= "Portadas/Sailor_Song.jpg">
+          
+          <div class="song-front-overlay">
+            <span class="song-name">Sailor Song</span>
+            <span class="song-artist">Gigi Perez</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src= "Portadas/Si_No_TeHubierasIdo.jpg">
+          
+          <div class="song-front-overlay">
+            <span class="song-name">Si no te hubieras ido</span>
+            <span class="song-artist">Marco Antonio Solís</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Me encanta esta canción, quería escucharla contigo.</p>
+          <p class="song-back-attr"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src="Don't Look Back in Anger.jpg">
+          <div class="song-front-overlay">
+            <span class="song-name">Don't Look Back in Anger</span>
+            <span class="song-artist">Oasis</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Escuche el album completo, considero que esta podría gustarte.</p>
+          <p class="song-back-attr"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src="Interstellar.jpg">
+          <div class="song-placeholder">
+            
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Cornfield Chase</span>
+            <span class="song-artist">Artista</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Pequeña Mel cientifica. Akesia.</p>
+          <p class="song-back-attr"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <div class="song-placeholder">
+            <img src="Oppenheimer.jpg">
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Can you hear the music?</span>
+            <span class="song-artist">Oppenheimer</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Escucharla te da poderes, poderes que demuestran teoremas.</p>
+          <p class="song-back-attr"></p>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
   <div class="songs-grid">
 
     <div class="song-card" onclick="flipSong(this)">
@@ -983,9 +1087,7 @@
       <div class="song-card-inner">
         <div class="song-front">
           <img src="The_reason.jpg">
-          <div class="song-placeholder">
-            <div class="song-vinyl"></div>
-          </div>
+          
           <div class="song-front-overlay">
             <span class="song-name">The Reason</span>
             <span class="song-artist">Hoobastank</span>
@@ -1002,10 +1104,8 @@
     <div class="song-card" onclick="flipSong(this)">
       <div class="song-card-inner">
         <div class="song-front">
-          <img src= "Sailor_Song.jpg">
-          <div class="song-placeholder">
-            <div class="song-vinyl"></div>
-          </div>
+          <img src= "Portadas/Sailor_Song.jpg">
+          
           <div class="song-front-overlay">
             <span class="song-name">Sailor Song</span>
             <span class="song-artist">Gigi Perez</span>
@@ -1013,7 +1113,62 @@
         </div>
         <div class="song-back">
           <span class="song-back-ornament">♪</span>
-          <p class="song-back-quote">No sé qué decir.</p>
+          <p class="song-back-quote">...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src= "Si_No_TeHubierasIdo.jpg">
+          
+          <div class="song-front-overlay">
+            <span class="song-name">Si no te hubieras ido</span>
+            <span class="song-artist">Marco Antonio Solís</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Me encanta esta canción, quería escucharla contigo.</p>
+          <p class="song-back-attr"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src="Don't Look Back in Anger.jpg">
+          <div class="song-front-overlay">
+            <span class="song-name">Don't Look Back in Anger</span>
+            <span class="song-artist">Oasis</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Escuche el album completo, considero que esta podría gustarte.</p>
+          <p class="song-back-attr"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src="Interstellar.jpg">
+          <div class="song-placeholder">
+            
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Cornfield Chase</span>
+            <span class="song-artist">Artista</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Pequeña Mel cientifica. Akesia.</p>
+          <p class="song-back-attr"></p>
         </div>
       </div>
     </div>
@@ -1022,89 +1177,337 @@
       <div class="song-card-inner">
         <div class="song-front">
           <div class="song-placeholder">
-            <div class="song-vinyl"></div>
+            <img src="Oppenheimer.jpg">
           </div>
           <div class="song-front-overlay">
-            <span class="song-name">Canción 5</span>
-            <span class="song-artist">Artista</span>
+            <span class="song-name">Can you hear the music?</span>
+            <span class="song-artist">Oppenheimer</span>
           </div>
         </div>
         <div class="song-back">
           <span class="song-back-ornament">♪</span>
-          <p class="song-back-quote">La escucho cuando quiero recordar por qué todo vale la pena. Siempre llego a la misma respuesta: tú.</p>
-          <p class="song-back-attr">La respuesta</p>
+          <p class="song-back-quote">Escucharla te da poderes, poderes que demuestran teoremas.</p>
+          <p class="song-back-attr"></p>
         </div>
       </div>
-    </div>
-
-    <div class="song-card" onclick="flipSong(this)">
-      <div class="song-card-inner">
-        <div class="song-front">
-          <div class="song-placeholder">
-            <div class="song-vinyl"></div>
-          </div>
-          <div class="song-front-overlay">
-            <span class="song-name">Canción 6</span>
-            <span class="song-artist">Artista</span>
-          </div>
-        </div>
-        <div class="song-back">
-          <span class="song-back-ornament">♪</span>
-          <p class="song-back-quote">Si pudiera dedicarte solo una canción para siempre, sería esta. Escúchala y piensa en mí.</p>
-          <p class="song-back-attr">Para siempre</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="song-card" onclick="flipSong(this)">
-      <div class="song-card-inner">
-        <div class="song-front">
-          <div class="song-placeholder">
-            <div class="song-vinyl"></div>
-          </div>
-          <div class="song-front-overlay">
-            <span class="song-name">Canción 7</span>
-            <span class="song-artist">Artista</span>
-          </div>
-        </div>
-        <div class="song-back">
-          <span class="song-back-ornament">♪</span>
-          <p class="song-back-quote">Me encontró en el momento justo, igual que tú. Creo que no fue coincidencia ninguna de las dos.</p>
-          <p class="song-back-attr">Destino</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="song-card" onclick="flipSong(this)">
-      <div class="song-card-inner">
-        <div class="song-front">
-          <div class="song-placeholder">
-            <div class="song-vinyl"></div>
-          </div>
-          <div class="song-front-overlay">
-            <span class="song-name">Canción 8</span>
-            <span class="song-artist">Artista</span>
-          </div>
-        </div>
-        <div class="song-back">
-          <span class="song-back-ornament">♪</span>
-          <p class="song-back-quote">Esta canción tiene tu nombre escrito entre líneas aunque tú todavía no lo sepas.</p>
-          <p class="song-back-attr">Un secreto</p>
-        </div>
-      </div>
+      
     </div>
 
   </div>
-  <p class="song-hint">Toca cada portada para leer lo que siento</p>
+  <div class="songs-grid">
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+            <img src="Portadas/Slide_Away.jpg">
+          <div class="song-placeholder">
+            <div class="song-vinyl"></div>
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Slide Away</span>
+            <span class="song-artist">Oasis</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Desde aquí empiezo, no recuerdo mucho, pero investigaré para descubrir las demás.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+            <img src="Portadas/Mujer_Amante.jpg">
+          <div class="song-placeholder">
+            <div class="song-vinyl"></div>
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Mujer Amante</span>
+            <span class="song-artist">Rata blanca</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">"Nunca había encontrado a nadie que le gustará." Lo mismo me paso</p>
+          <p class="song-back-attr">Un recuerdo</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src="Portadas/The_reason.jpg">
+          
+          <div class="song-front-overlay">
+            <span class="song-name">The Reason</span>
+            <span class="song-artist">Hoobastank</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">"...And the reason is you."</p>
+            <p class="song-back-attr">Distancia</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src= "Portadas/Sailor_Song.jpg">
+          
+          <div class="song-front-overlay">
+            <span class="song-name">Sailor Song</span>
+            <span class="song-artist">Gigi Perez</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src= "Portadas/Si_No_TeHubierasIdo.jpg">
+          
+          <div class="song-front-overlay">
+            <span class="song-name">Si no te hubieras ido</span>
+            <span class="song-artist">Marco Antonio Solís</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Me encanta esta canción, quería escucharla contigo.</p>
+          <p class="song-back-attr"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src="Portadas/Don't Look Back in Anger.jpg">
+          <div class="song-front-overlay">
+            <span class="song-name">Don't Look Back in Anger</span>
+            <span class="song-artist">Oasis</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Escuche el album completo, considero que esta podría gustarte.</p>
+          <p class="song-back-attr"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src="Portadas/Interstellar.jpg">
+          <div class="song-placeholder">
+            
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Cornfield Chase</span>
+            <span class="song-artist">Artista</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Pequeña Mel cientifica. Akesia.</p>
+          <p class="song-back-attr"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <div class="song-placeholder">
+            <img src="Portadas/Oppenheimer.jpg">
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Can you hear the music?</span>
+            <span class="song-artist">Oppenheimer</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Escucharla te da poderes, poderes que demuestran teoremas.</p>
+          <p class="song-back-attr"></p>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+  <div class="songs-grid">
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+            <img src="Portadas/Slide_Away.jpg">
+          <div class="song-placeholder">
+            <div class="song-vinyl"></div>
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Slide Away</span>
+            <span class="song-artist">Oasis</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Desde aquí empiezo, no recuerdo mucho, pero investigaré para descubrir las demás.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+            <img src="Portadas/Mujer_Amante.jpg">
+          <div class="song-placeholder">
+            <div class="song-vinyl"></div>
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Mujer Amante</span>
+            <span class="song-artist">Rata blanca</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">"Nunca había encontrado a nadie que le gustará." Lo mismo me paso</p>
+          <p class="song-back-attr">Un recuerdo</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src="Portadas/The_reason.jpg">
+          
+          <div class="song-front-overlay">
+            <span class="song-name">The Reason</span>
+            <span class="song-artist">Hoobastank</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">"...And the reason is you."</p>
+            <p class="song-back-attr">Distancia</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src= "Portadas/Sailor_Song.jpg">
+          
+          <div class="song-front-overlay">
+            <span class="song-name">Sailor Song</span>
+            <span class="song-artist">Gigi Perez</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src= "Portadas/Si_No_TeHubierasIdo.jpg">
+          
+          <div class="song-front-overlay">
+            <span class="song-name">Si no te hubieras ido</span>
+            <span class="song-artist">Marco Antonio Solís</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Me encanta esta canción, quería escucharla contigo.</p>
+          <p class="song-back-attr"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src="Portadas/Don't Look Back in Anger.jpg">
+          <div class="song-front-overlay">
+            <span class="song-name">Don't Look Back in Anger</span>
+            <span class="song-artist">Oasis</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Escuche el album completo, considero que esta podría gustarte.</p>
+          <p class="song-back-attr"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <img src="Portadas/Interstellar.jpg">
+          <div class="song-placeholder">
+            
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Cornfield Chase</span>
+            <span class="song-artist">Artista</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Pequeña Mel cientifica. Akesia.</p>
+          <p class="song-back-attr"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="flipSong(this)">
+      <div class="song-card-inner">
+        <div class="song-front">
+          <div class="song-placeholder">
+            <img src="Portadas/Oppenheimer.jpg">
+          </div>
+          <div class="song-front-overlay">
+            <span class="song-name">Can you hear the music?</span>
+            <span class="song-artist">Oppenheimer</span>
+          </div>
+        </div>
+        <div class="song-back">
+          <span class="song-back-ornament">♪</span>
+          <p class="song-back-quote">Escucharla te da poderes, poderes que demuestran teoremas.</p>
+          <p class="song-back-attr"></p>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+  <p class="song-hint">Toca cada portada</p>
 </section>
 
-<!-- CARTAS -->
+
 <div id="cartas" style="background:linear-gradient(135deg,#1a0f14,#120a10,#1a0f14);padding:5rem 2rem;">
   <div class="cartas-inner">
     <p class="section-label" style="color:rgba(200,169,110,0.6)">Solo para ti</p>
     <h2 class="section-title" style="color:rgba(253,248,242,0.9)">Las cartas</h2>
 
-    <!-- PANTALLA DE BLOQUEO -->
+   
     <div class="lock-screen" id="lockScreen">
       <div class="lock-icon-wrap">
         <svg viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.7)" stroke-width="1.5" width="32" height="32">
@@ -1118,30 +1521,49 @@
         Estas cartas fueron escritas solo para tus ojos.<br>
         Para abrirlas necesitas descifrar la contraseña.
       </p>
-
       <div class="hint-box">
-        <p class="hint-label">✦ Pista 1 — La contraseña cifrada en Base64</p>
-        <!-- La contraseña se genera automáticamente desde JS -->
-        <div class="cipher-display" id="cipherDisplay"></div>
+        <p class="hint-label">Contraseña — La contraseña cifrada en alguna configuración, si es que lo deseas, tendrás que averigurar qué. <br>Esta es la contraseña:</p>
+        
+        <div class="cipher-display" id="cipherDisplay"> 00119d27eea5bac274fd4d2ec98a8b13583f027bc10b3f773dee8e434b3b99ad</div>
       </div>
 
       <div class="hint-box">
-        <p class="hint-label">✦ Pista 2 — Cómo descifrarla</p>
+        <p class="hint-label">Cómo descifrarla</p>
         <p class="hint-text">
-          La contraseña está codificada en <strong style="color:rgba(200,169,110,0.8)">Base64</strong>.<br>
-          Para descifrarla, ve a la máquina de abajo, selecciona <em style="color:rgba(201,120,138,0.9)">Base64 → Texto</em>,
-          pega el código de arriba y presiona descifrar.<br><br>
-          <span style="opacity:0.6">💡 La contraseña tiene relación con la fecha más importante para nosotros.</span>
+          La contraseña está codificada con <strong style="color:rgba(200,169,110,0.8)">Hash</strong>.<br>
+          Cuando ingresas un texto, el metodo hash lo convierte a una forma muy larga. <br> Ejemplo: <br>
+          <strong style="color:rgba(194, 153, 78, 0.8)">Hola =</strong> b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79 <br>
+          <strong style="color:rgba(194, 153, 78, 0.8)">ola demonio =</strong> 9aef505b81ffe41366d8310795d3d281c4d5c2510b4087cd71992f365732ade6 <br>
+          <span style="opacity:0.6">💡 La contraseña tiene que estar escrita tal cual la original, si mi contraseña es <strong style="color:rgba(194, 153, 78, 0.8)">Hola</strong> no será valido escribir <strong style="color:rgba(194, 153, 78, 0.8)">hola </strong></span>
         </p>
       </div>
 
       <div class="hint-box">
-        <p class="hint-label">✦ Pista 3 — Una última ayuda</p>
-        <!-- ✏️ CAMBIA ESTA PISTA para que apunte a tu contraseña real -->
+        <p class="hint-label"> Pista 3 — Una última ayuda</p>
+        
         <p class="hint-text">
-          Piensa en ese día, ese mes, ese año — en el formato <em style="color:rgba(200,169,110,0.8)">DD-MM-YYYY</em>.<br>
-          Luego añade al final las iniciales de tu nombre.
+          Limitando tus opciones ayudará decir que no es una fecha. Es algo que no se sabe si existe realmente, pero todos le tienen respeto, o miedo...
         </p>
+      </div>
+      
+      <div class="hint-box">
+        <p class="hint-label">ola demonio</p>
+        
+        <p class="hint-text">
+          Entiendo si es mucho, hice esta actividad pensando en que te gustan las cosas así. Admito que me costo dormir cuando escribia esto, me moría más cuando la leía, soy muy miedoso.<br>
+          En el apartado contraseña tendrás que colocarle en texto. ¡Buena suerte!
+        </p>
+      </div>
+
+      <div class="hint-box">
+        <p class="hint-label">Informes</p>
+       
+        <p class="hint-text">
+          <a href="INFORME_2.pdf" target="_blank" ><strong style="color:rgba(194, 153, 78, 0.8)">AS-10001-A</strong></a> <br>
+          <a href="INFORME_2.pdf" target="_blank" ><strong style="color:rgba(194, 153, 78, 0.8)">AS-10001-B</strong></a> <br>
+          <a href="FIN.pdf" target="_blank" ><strong style="color:rgba(168, 13, 13, 0.822)">INFORME FINAL.</strong></a> <br>
+        </p>
+        
       </div>
 
       <div class="password-input-wrap">
@@ -1150,7 +1572,7 @@
       </div>
       <p class="error-msg" id="errorMsg"></p>
 
-      <!-- Máquina descifradora (antes de desbloquear) -->
+     
       <div class="machine-section">
         <h3 class="machine-title">Máquina descifradora</h3>
         <p class="machine-sub">Ajusta la configuración según el tipo de código que quieras descifrar</p>
@@ -1158,6 +1580,7 @@
           <div class="ctrl-group">
             <label class="ctrl-label">Modo</label>
             <select class="ctrl-select" id="machMode">
+              <option value="sha256">Texto → hash </option>
               <option value="b64decode">Base64 → Texto</option>
               <option value="b64encode">Texto → Base64</option>
               <option value="caesar">César (descifrar)</option>
@@ -1182,21 +1605,30 @@
       </div>
     </div>
 
-    <!-- CARTAS DESBLOQUEADAS -->
+    
     <div class="cartas-content" id="cartasContent">
       <p class="carta-intro">Has descifrado el acceso. Estas palabras estaban esperándote. ✦</p>
 
-      <!-- ✏️ CAMBIA EL TÍTULO Y CONTENIDO DE CADA CARTA -->
+      
       <div class="carta-envelope" onclick="toggleCarta(this)">
         <div class="carta-header">
           <span class="carta-num">Carta I</span>
-          <span class="carta-title-display">La primera cosa que quiero decirte</span>
+          <span class="carta-title-display">Es difícil decir adíos.</span>
           <span class="carta-chevron">▾</span>
         </div>
         <div class="carta-body">
-          <p>Aquí irá tu primera carta. Puedes escribir todo lo que sientes, todo lo que quieres que ella lea. Este espacio es completamente tuyo.</p>
-          <p>Cada palabra que pongas aquí habrá valido la pena solo por el momento en que ella la lea.</p>
-          <p class="carta-firma">— Con todo lo que soy</p>
+          <p>No pude acompañarte a la esquina, lo lamento. No sabía que mientras yo iba de camino a casa tu llorabas.</p> <br>
+          <p>¿De qué sirve que me disculpe?</p> <br>
+          <p>Puede que no haga eso, pero puedo decir otras cosas, hacerlas. No entiendo porqué pedia perdón. Si de verdad lo hubiera lamentado, tal vez no lo hubiera hecho.</p><br>
+          <p>Se sintio distinto, muy distinto, ya te lo dije, pero de verdad que se sientio así, como si ya reconociera ese mensaje, como si ya hubiera soñado con él ¿pero qué esperaba, que estes ahí detras de mi, porque soy tan orgulloso que nunca he estado detras de ti?</p> <br>
+          <p>No lloré desde esa ultima vez en el parque, tendría que estar llorando, tirado en mi cuarto buscando consuelo, hablando con mis amigos, diciendole a todos como me siento. Pero esta vez no. Yo no soy la victima Melanik, yo soy el culpable.</p> <br>
+          <p>El problema recae en que todos quieren lo bueno del amor, pero nadie quiere pagar el precio, no cuando piensan desde la razón. Pues estar enamorado es aceptar todo, como si no importaran las consecuencias, preguntale a un enamorado, si seguíria con su pareja a pesar de que en un año este recaeria en el alcoholismo por esa persona.Estoy seguro que lo haría, pues esta enamorado, Melanik.</p> <br>
+          <p>Si te interesa algo lo haces sin recibir nada a cambio...</p> <br>
+          <p>Cuando aprendí a programar, o al menos lo poco que sé, me intereso, aprendía porque me gustaba, porque entre tanto codigo encontraba algo emocionante, nunca espere que el creador de el lenguaje me diera algo, ni que por hacer estas cosas alguien me diera algo. Lo hacia por mi, eso me hacía feliz y lo sigue haciendo, claro que sí.</p><br>
+          <p>Pero contigo no Melanik, no era así, yo te quiero y decir que solo hago esto porque no quiero recibir nada a cambio es una gran mentira, justo ahora podría estar durmiendo, estudiando, trabajando, qué mas da, la cuestion es que no sé que quiero. ¿Qué me quieras? supongo que ya lo haces ¿Qué me ames? sentiria que es mentira.</p> <br>
+          <p>Tú me esperabas en la banca, porque esperabas que fuera, te interesaba y querías recibir a cambio algo.</p> <br>
+          <p>Hoy, quisiera que al revisar mi telefono estuviera un mensaje tuyo, es lo unico que espero ver en mi telefono, diciendome que me quieres, que me amas, que quieres estar conmigo, que te equivocaste al decir todo eso, que soy lo que quieres, que adoras cada parte de mi: Hoy quisiera que me mintieras :,(</p>
+          <p class="carta-firma"> - Perdonáme</p>
         </div>
       </div>
 
@@ -1207,7 +1639,10 @@
           <span class="carta-chevron">▾</span>
         </div>
         <div class="carta-body">
-          <p>Segunda carta. Escribe aquí lo que nunca encontraste el momento de decir. Las palabras escritas pesan diferente a las habladas.</p>
+          <p>Amanecer contigo fueron las cosas que más adore, dormir; no hacer nada y aun así que se sintiera tan bien era increíble. Deseaba que las horas no avanzarán, que nos quedemos acostados todo un dia, sintiendo tu pecho latir, tu cuerpo.</p> <br>
+          <p>La primera vez que te vi sin sueter: Estaba sentado en tu cama, esperando a abrir los ojos mientras pensaba por qué me he de burlar, abri los ojos y te vi, lo que menos pense fue en burlarme, si no en lo que tuviste que pasar Melanik, sentí una responsabilidad, como si de mi dependieran ciertas cosas.</p> <br>
+          <p>Hubo momentos donde me había quedado sin efectivo, sin dinero para regresarme a casa. Si yo tenia 20 pesos, preferia dartelos a ti, comprandote cosas Melanik. Por favor, ponme atención, no lo digo para que te sientas culpable. Estaba muy enamorado Melanik, mucho, que prefería dormir en la calle a no complacerte en algo. A caminar a mi casa por no tener efectivo pero pasar 5 minutos contigo. Eso para mi Melanik, era una prueba de que tanto te quiero, tantisimo. Que cuando no estoy de orgulloso, podría hacer muchas cosas, llevarte serenata, cantarte, pintarte, besarte toda tu cara, abrazarte tanto. No sabes las cosas que haría cuando no tenía mi orgullo presente.Por favor ¡No es reclamo! No lo es ni lo será. No me arrepiento de hacerlo, me arrepiento de no haberlo hecho más veces.</p><br>
+          <p>Por el momento es todo Melanik. Mañana escribiré más. Te quiero, descansa.</p>
           <p class="carta-firma">— Siempre</p>
         </div>
       </div>
@@ -1215,16 +1650,16 @@
       <div class="carta-envelope" onclick="toggleCarta(this)">
         <div class="carta-header">
           <span class="carta-num">Carta III</span>
-          <span class="carta-title-display">Para cuando lo necesites recordar</span>
+          <span class="carta-title-display">Indiferencia.</span>
           <span class="carta-chevron">▾</span>
         </div>
         <div class="carta-body">
-          <p>Esta carta es para los días difíciles. Para cuando dudes de ti misma. Para que sepas exactamente lo que alguien piensa de ti cuando no puedes verlo claramente.</p>
+          <p>...</p>
           <p class="carta-firma">— Tuyo/a</p>
         </div>
       </div>
 
-      <!-- Máquina descifradora (después de desbloquear) -->
+     
       <div class="machine-section">
         <h3 class="machine-title">Máquina descifradora</h3>
         <p class="machine-sub">Para los mensajes ocultos dentro de las cartas</p>
@@ -1232,6 +1667,7 @@
           <div class="ctrl-group">
             <label class="ctrl-label">Modo</label>
             <select class="ctrl-select" id="machMode2">
+              <option value="sha256">Texto → SHA-256</option>
               <option value="b64decode">Base64 → Texto</option>
               <option value="b64encode">Texto → Base64</option>
               <option value="caesar">César (descifrar)</option>
@@ -1258,33 +1694,35 @@
   </div>
 </div>
 
-<!-- FOOTER -->
+
 <footer>
-  <!-- ✏️ CAMBIA EL NOMBRE EN EL FOOTER -->
+ 
   <span class="footer-rose">✿</span>
   <p>Hecho con amor · Solo para ti · Siempre</p>
 </footer>
 
 <script>
-// ════════════════════════════════════════════
-//   ✏️  CONFIGURACIÓN — CAMBIA ESTOS VALORES
-// ════════════════════════════════════════════
 
-// Contraseña real que debe escribir para desbloquear las cartas
-// Recomendado: una fecha especial + iniciales, p.ej. "14-02-2024SG"
-const REAL_PASSWORD = '14-02-2024SG';
+const PASSWORD_HASH = "b51d555b1049c0b213f72db6057e61ed56ca6c515a84948c88b6c9d8d5b13c4d";
 
-// ════════════════════════════════════════════
-//   SISTEMA DE BLOQUEO (no necesitas editar esto)
-// ════════════════════════════════════════════
 
-// Muestra la versión cifrada en Base64 como pista
 document.getElementById('cipherDisplay').textContent = btoa(REAL_PASSWORD);
 
-function tryUnlock() {
+async function sha256(text) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(text);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function tryUnlock() {
   const input = document.getElementById('passwordInput').value;
   const err = document.getElementById('errorMsg');
-  if (input === REAL_PASSWORD) {
+
+  const inputHash = await sha256(input);
+
+  if (inputHash === PASSWORD_HASH) {
     document.getElementById('lockScreen').style.display = 'none';
     const cc = document.getElementById('cartasContent');
     cc.style.display = 'block';
@@ -1300,9 +1738,6 @@ document.getElementById('passwordInput').addEventListener('keydown', e => {
   if (e.key === 'Enter') tryUnlock();
 });
 
-// ════════════════════════════════════════════
-//   CARTAS — ACORDEÓN
-// ════════════════════════════════════════════
 
 function toggleCarta(el) {
   const body = el.querySelector('.carta-body');
@@ -1316,9 +1751,6 @@ function toggleCarta(el) {
   }
 }
 
-// ════════════════════════════════════════════
-//   MÁQUINA DESCIFRADORA
-// ════════════════════════════════════════════
 
 function caesarDecrypt(text, shift) {
   return text.split('').map(c => {
@@ -1340,7 +1772,15 @@ function caesarEncrypt(text, shift) {
 }
 function rot13(text) { return caesarEncrypt(text, 13); }
 
-function processMachine(inputId, modeId, shiftId, outputId) {
+async function sha256(text) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(text);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function processMachine(inputId, modeId, shiftId, outputId) {
   const input = document.getElementById(inputId).value.trim();
   const mode = document.getElementById(modeId).value;
   const shift = parseInt(document.getElementById(shiftId).value) || 3;
@@ -1354,26 +1794,43 @@ function processMachine(inputId, modeId, shiftId, outputId) {
     else if (mode === 'caesarEnc') result = caesarEncrypt(input, shift);
     else if (mode === 'reverse') result = input.split('').reverse().join('');
     else if (mode === 'rot13') result = rot13(input);
+    else if (mode === 'sha256') result = await sha256(input);
     out.textContent = result;
+
+    const TARGET_HASH = "b51d555b1049c0b213f72db6057e61ed56ca6c515a84948c88b6c9d8d5b13c4d";
+
+    if (result === TARGET_HASH) {
+    out.textContent = result + "\n\n✓ Coincidencia encontrada";
+    } else {
+     out.textContent = result;
+    }
   } catch(e) {
     out.textContent = '⚠ Error al procesar. Verifica que el texto sea correcto para este modo.';
   }
 }
 
-function runMachine()   { processMachine('machInput','machMode','caesarShift','machOutput'); }
+
 function clearMachine() { document.getElementById('machInput').value=''; document.getElementById('machOutput').textContent='El resultado aparecerá aquí...'; }
 function copyOutput()   { navigator.clipboard.writeText(document.getElementById('machOutput').textContent).catch(()=>{}); }
 
-function runMachine2()   { processMachine('machInput2','machMode2','caesarShift2','machOutput2'); }
+
 function clearMachine2() { document.getElementById('machInput2').value=''; document.getElementById('machOutput2').textContent='El resultado aparecerá aquí...'; }
 function copyOutput2()   { navigator.clipboard.writeText(document.getElementById('machOutput2').textContent).catch(()=>{}); }
 
-// CANCIONES — VOLTEO
+
+async function runMachine() {
+  await processMachine('machInput','machMode','caesarShift','machOutput');
+}
+
+async function runMachine2() {
+  await processMachine('machInput2','machMode2','caesarShift2','machOutput2');
+}
+
 function flipSong(card) {
   card.classList.toggle('flipped');
 }
 
-// ANIMACIÓN TIMELINE
+
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
