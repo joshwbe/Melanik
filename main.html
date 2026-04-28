@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Melanik</title>
+<title>1984</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -421,7 +421,7 @@
     min-height: 1rem;
   }
 
-  .cartas-content { display: none; }
+  .cartas-content { display: block; }
   .carta-envelope {
     border: 1px solid rgba(200,169,110,0.25);
     border-radius: 4px;
@@ -569,7 +569,7 @@
 
   .song-back {
   transform: rotateY(180deg);
-  background: linear-gradient(135deg, #e6f3ff, #cfe8ff); /* azul claro */
+  background: linear-gradient(135deg, #e6f3ff, #cfe8ff);
   border: 1px solid rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
@@ -1510,109 +1510,13 @@
     <p class="section-label" style="color:rgba(200,169,110,0.6)">Solo para ti</p>
     <h2 class="section-title" style="color:rgba(253,248,242,0.9)">Las cartas</h2>
 
-   
-    <div class="lock-screen" id="lockScreen">
-      <div class="lock-icon-wrap">
-        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.7)" stroke-width="1.5" width="32" height="32">
-          <rect x="5" y="11" width="14" height="11" rx="2"/>
-          <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
-          <circle cx="12" cy="16" r="1" fill="rgba(200,169,110,0.7)" stroke="none"/>
-        </svg>
-      </div>
+    <!-- lockScreen OCULTO — las cartas se muestran directamente -->
+    <div class="lock-screen" id="lockScreen" style="display:none;"></div>
 
-      <p class="carta-intro">
-        Estas cartas fueron escritas solo para tus ojos.<br>
-        Para abrirlas necesitas descifrar la contraseña.
-      </p>
-      <div class="hint-box">
-        <p class="hint-label">Contraseña — La contraseña cifrada en alguna configuración, si es que lo deseas, tendrás que averigurar qué. <br>Esta es la contraseña:</p>
-        
-        <div class="cipher-display" id="cipherDisplay"> 00119d27eea5bac274fd4d2ec98a8b13583f027bc10b3f773dee8e434b3b99ad</div>
-      </div>
+    <!-- cartasContent VISIBLE directamente -->
+    <div class="cartas-content" id="cartasContent" style="display:block;">
+      <p class="carta-intro">Estas palabras estaban esperándote. ✦</p>
 
-      <div class="hint-box">
-        <p class="hint-label">Cómo descifrarla</p>
-        <p class="hint-text">
-          La contraseña está codificada con <strong style="color:rgba(200,169,110,0.8)">Hash</strong>.<br>
-          Cuando ingresas un texto, el metodo hash lo convierte a una forma muy larga. <br> Ejemplo: <br>
-          <strong style="color:rgba(194, 153, 78, 0.8)">Hola =</strong> b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79 <br>
-          <strong style="color:rgba(194, 153, 78, 0.8)">ola demonio =</strong> 9aef505b81ffe41366d8310795d3d281c4d5c2510b4087cd71992f365732ade6 <br>
-          <span style="opacity:0.6">💡 La contraseña tiene que estar escrita tal cual la original, si mi contraseña es <strong style="color:rgba(194, 153, 78, 0.8)">Hola</strong> no será valido escribir <strong style="color:rgba(194, 153, 78, 0.8)">hola </strong></span>
-        </p>
-      </div>
-
-      <div class="hint-box">
-        <p class="hint-label"> Pista 3 — Una última ayuda</p>
-        
-        <p class="hint-text">
-          Limitando tus opciones ayudará decir que no es una fecha. Es algo que no se sabe si existe realmente, pero todos le tienen respeto, o miedo...
-        </p>
-      </div>
-      
-      <div class="hint-box">
-        <p class="hint-label">ola demonio</p>
-        
-        <p class="hint-text">
-          Entiendo si es mucho, hice esta actividad pensando en que te gustan las cosas así. Admito que me costo dormir cuando escribia esto, me moría más cuando la leía, soy muy miedoso.<br>
-          En el apartado contraseña tendrás que colocarle en texto. ¡Buena suerte!
-        </p>
-      </div>
-
-      <div class="hint-box">
-        <p class="hint-label">Informes</p>
-       
-        <p class="hint-text">
-          <a href="INFORME_2.pdf" target="_blank" ><strong style="color:rgba(194, 153, 78, 0.8)">AS-10001-A</strong></a> <br>
-          <a href="INFORME_2.pdf" target="_blank" ><strong style="color:rgba(194, 153, 78, 0.8)">AS-10001-B</strong></a> <br>
-          <a href="FIN.pdf" target="_blank" ><strong style="color:rgba(168, 13, 13, 0.822)">INFORME FINAL.</strong></a> <br>
-        </p>
-        
-      </div>
-
-      <div class="password-input-wrap">
-        <input type="password" class="password-input" id="passwordInput" placeholder="Escribe la contraseña...">
-        <button class="unlock-btn" onclick="tryUnlock()">Abrir ✦</button>
-      </div>
-      <p class="error-msg" id="errorMsg"></p>
-
-      
-      <div class="machine-section">
-        <h3 class="machine-title">Máquina descifradora</h3>
-        <p class="machine-sub">Ajusta la configuración según el tipo de código que quieras descifrar</p>
-        <div class="machine-controls">
-          <div class="ctrl-group">
-            <label class="ctrl-label">Modo</label>
-            <select class="ctrl-select" id="machMode">
-              <option value="sha256">Texto → hash </option>
-              <option value="b64decode">Base64 → Texto</option>
-              <option value="b64encode">Texto → Base64</option>
-              <option value="caesar">César (descifrar)</option>
-              <option value="caesarEnc">César (cifrar)</option>
-              <option value="reverse">Texto invertido</option>
-              <option value="rot13">ROT-13</option>
-            </select>
-          </div>
-          <div class="ctrl-group">
-            <label class="ctrl-label">Desplazamiento César (si aplica)</label>
-            <input type="number" class="ctrl-input-m" id="caesarShift" value="3" min="1" max="25">
-          </div>
-        </div>
-        <textarea class="machine-textarea" id="machInput" placeholder="Pega aquí el mensaje a descifrar..."></textarea>
-        <div class="machine-actions">
-          <button class="mach-btn primary" onclick="runMachine()">⚙ Descifrar / Cifrar</button>
-          <button class="mach-btn" onclick="clearMachine()">Limpiar</button>
-          <button class="mach-btn" onclick="copyOutput()">Copiar resultado</button>
-        </div>
-        <p class="output-label">Resultado:</p>
-        <div class="machine-output" id="machOutput">El resultado aparecerá aquí...</div>
-      </div>
-    </div>
-
-    
-    <div class="cartas-content" id="cartasContent">
-      <p class="carta-intro">Has descifrado el acceso. Estas palabras estaban esperándote. ✦</p>
-
-      
       <div class="carta-envelope" onclick="toggleCarta(this)">
         <div class="carta-header">
           <span class="carta-num">Carta I</span>
@@ -1661,6 +1565,17 @@
         </div>
       </div>
 
+      <div class="carta-envelope" onclick="toggleCarta(this)">
+        <div class="carta-header">
+          <span class="carta-num">Carta IV</span>
+          <span class="carta-title-display">Corazon de meloooon.</span>
+          <span class="carta-chevron">▾</span>
+        </div>
+        <div class="carta-body">
+          <a href="<3.pdf">corazondemelocoton</a>
+          <p class="carta-firma"></p>
+        </div>
+      </div>
       
       <div class="machine-section">
         <h3 class="machine-title">Máquina descifradora</h3>
@@ -1698,50 +1613,11 @@
 
 
 <footer>
-  
   <span class="footer-rose">✿</span>
-  <p>Hecho con amor · Solo para ti · Siempre</p>
+  <p>Hecho con amor · Solo para ti · El Gran Hermano.</p>
 </footer>
 
 <script>
-
-const PASSWORD_HASH = "b51d555b1049c0b213f72db6057e61ed56ca6c515a84948c88b6c9d8d5b13c4d";
-
-
-document.getElementById('cipherDisplay').textContent = btoa(REAL_PASSWORD);
-
-async function sha256(text) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(text);
-  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
-}
-
-async function tryUnlock() {
-  const input = document.getElementById('passwordInput').value;
-  const err = document.getElementById('errorMsg');
-
-  const inputHash = await sha256(input);
-
-  if (inputHash === PASSWORD_HASH) {
-    document.getElementById('lockScreen').style.display = 'none';
-    const cc = document.getElementById('cartasContent');
-    cc.style.display = 'block';
-    err.textContent = '';
-    setTimeout(() => cc.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-  } else {
-    err.textContent = 'Contraseña incorrecta. Sigue las pistas... ✦';
-    document.getElementById('passwordInput').value = '';
-  }
-}
-
-document.getElementById('passwordInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter') tryUnlock();
-});
-
-
-
 function toggleCarta(el) {
   const body = el.querySelector('.carta-body');
   const chev = el.querySelector('.carta-chevron');
@@ -1753,8 +1629,6 @@ function toggleCarta(el) {
     chev.style.transform = 'rotate(180deg)';
   }
 }
-
-
 
 function caesarDecrypt(text, shift) {
   return text.split('').map(c => {
@@ -1800,31 +1674,13 @@ async function processMachine(inputId, modeId, shiftId, outputId) {
     else if (mode === 'rot13') result = rot13(input);
     else if (mode === 'sha256') result = await sha256(input);
     out.textContent = result;
-
-    const TARGET_HASH = "b51d555b1049c0b213f72db6057e61ed56ca6c515a84948c88b6c9d8d5b13c4d";
-
-    if (result === TARGET_HASH) {
-    out.textContent = result + "\n\n✓ Coincidencia encontrada";
-    } else {
-     out.textContent = result;
-    }
   } catch(e) {
     out.textContent = '⚠ Error al procesar. Verifica que el texto sea correcto para este modo.';
   }
 }
 
-
-function clearMachine() { document.getElementById('machInput').value=''; document.getElementById('machOutput').textContent='El resultado aparecerá aquí...'; }
-function copyOutput()   { navigator.clipboard.writeText(document.getElementById('machOutput').textContent).catch(()=>{}); }
-
-
 function clearMachine2() { document.getElementById('machInput2').value=''; document.getElementById('machOutput2').textContent='El resultado aparecerá aquí...'; }
 function copyOutput2()   { navigator.clipboard.writeText(document.getElementById('machOutput2').textContent).catch(()=>{}); }
-
-
-async function runMachine() {
-  await processMachine('machInput','machMode','caesarShift','machOutput');
-}
 
 async function runMachine2() {
   await processMachine('machInput2','machMode2','caesarShift2','machOutput2');
@@ -1833,8 +1689,6 @@ async function runMachine2() {
 function flipSong(card) {
   card.classList.toggle('flipped');
 }
-
-
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
